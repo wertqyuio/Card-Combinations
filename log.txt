@@ -1,0 +1,9 @@
+1. Reading the pbn file to identify available information before scraping it
+
+Notes:
+-can change parser to collect more information later
+-also note board # is implictly index less 1
+
+2. Link the pbn data to database
+  a. Import deals and results to data_upload.py file
+

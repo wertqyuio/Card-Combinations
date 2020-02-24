@@ -1,4 +1,4 @@
-# this file extracts all the deals from the PBN file and the double dummy 
+# this file extracts all the deals from the PBN file and the double dummy
 # tricks
 
 # optimizations include skipping file lines during reading
@@ -17,6 +17,11 @@ with open(filepath) as fp:
         elif line[:19] == "[DoubleDummyTricks ":
             result = line[20:line.find("]")-1]
             results.append(result)
+
+file_accuracy = (len(deals) == len(results))
+
+if not file_accuracy:
+    print("WARNING: The file selected has not been processed accurately")
 
 # below to see each deal and result individually
 # for deal in deals:
