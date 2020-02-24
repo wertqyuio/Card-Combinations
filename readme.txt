@@ -10,7 +10,7 @@ Intermediate data:
 
 Products:
 - Create table of distributions with key as the fit, split and honors distributions
-- Values will include frequencies and contract scores
+- Values will include frequencies
 - Visualize comprehensive data
 - Visualize game by game data
 - Post only the comprehensive data and last one to two months of game summaries
