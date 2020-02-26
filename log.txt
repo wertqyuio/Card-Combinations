@@ -6,4 +6,5 @@ Notes:
 
 2. Link the pbn data to database
   a. Import deals and results to data_upload.py file
+  b. Split each deal into distributions
 
