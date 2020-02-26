@@ -6,6 +6,10 @@
 filepath = "qt200217.pbn"
 deals = []
 results = []
+date = []
+
+for i in range(3):
+    date.append(filepath[2*(i+1):2*(i+2)])
 
 with open(filepath) as fp:
     line = fp.readline()
