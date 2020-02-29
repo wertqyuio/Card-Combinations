@@ -20,5 +20,10 @@ Notes:
     i. Add deals data to database
     ii. Add distributions data to database
 
+6. Consider reorganizing data so that product easier to generate
+  a. Note that actual card combinations data easy to find
+  b. Valuation is IMPORTANT, there are two valuations for every suit (trump and no trump)
+    i. Valuation flips based on orientation (re: board #)
+
 N. Don't forget virtual environment items.
    Fix primary keys for deals and distributions.

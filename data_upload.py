@@ -1,6 +1,6 @@
 from pbn_reader import date, deals, results
 from database_setup import create_connection
-from database_credentials import PGDATABASE, PGUSER, PGPASSWORD
+from database_credentials import PGDATABASE, PGUSER, PGPASSWORD, PGHOST, PGPORT
 from helper_functions import compare_hands
 
 # all_hands records all the hands before saving into database
@@ -10,7 +10,7 @@ insert_deals = []
 insert_distributions = []
 
 connection = create_connection(
-    PGDATABASE, PGUSER, PGPASSWORD, "127.0.0.1", "5432"
+    PGDATABASE, PGUSER, PGPASSWORD, PGHOST, PGPORT
 )
 
 
@@ -37,19 +37,19 @@ for idx_board in range(len(deals)):
             # every field entered into database will have prefix - insert
             left_hand = all_hands[4*idx_board+idx_hand][idx_suit]
             right_hand = all_hands[4*idx_board+idx_hand+2][idx_suit]
-            swap = False
-
+            # results are grouped by 10
+            results_idx = 10*((idx_board + idx_hand) % 2)
             if not compare_hands(left_hand, right_hand):
                 left_hand, right_hand = right_hand, left_hand
-                swap = True
             insert_distributions.append((
                 date[0], date[1], date[2], idx_board+1, suits[idx_suit],
-                left_hand, right_hand, swap))
+                left_hand, right_hand,
+                results[idx_board][results_idx:results_idx+10]))
 
 distributions_records = ", ".join(["%s"] * len(insert_distributions))
 
 insert_query_distributions = (
-    f'''INSERT INTO distributions (year, month, day, board, suit, long, short, swap)
+    f'''INSERT INTO distributions (year, month, day, board, suit, long, short, results)
      VALUES {distributions_records}'''
 )
 

@@ -6,7 +6,7 @@
 
 Intermediate data:
 - Distribution of trump suits from Quicktricks
-- Card combinations data
+- Card combinations data (other bridge programs do this, see 'https://www.bridgehands.com/S/Suit_Combinations.htm')
 
 Products:
 - Create table of distributions with key as the fit, split and honors distributions
