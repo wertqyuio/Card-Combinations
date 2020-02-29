@@ -1,5 +1,5 @@
 from pbn_reader import date, deals, results
-from database_setup import create_connection
+from database_helper_functions import create_connection
 from database_credentials import PGDATABASE, PGUSER, PGPASSWORD, PGHOST, PGPORT
 from helper_functions import compare_hands
 

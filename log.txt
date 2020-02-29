@@ -22,8 +22,12 @@ Notes:
 
 6. Consider reorganizing data so that product easier to generate
   a. Note that actual card combinations data easy to find
-  b. Valuation is IMPORTANT, there are two valuations for every suit (trump and no trump)
+  b. Valuation is IMPORTANT, there are five valuations for every suit (four trump and no trump)
     i. Valuation flips based on orientation (re: board #)
 
+7. Constructed original post mort-em insights.
+  a. Reports 5 most common split for all suits.
+
 N. Don't forget virtual environment items.
-   Fix primary keys for deals and distributions.
+   Fix primary keys for deals and distributions. ??? not sure if necessary
+   Add tests
