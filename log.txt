@@ -8,9 +8,16 @@ Notes:
   a. Import deals and results to data_upload.py file
   b. Split each deal into distributions
 
-3. Set-up database with primary-key = fit, split, and frequency
+3. Set-up database with primary-key = fit, split, suit, and date (3 inputs)
   a. Need table for distributions and frequency
   b. Need table for each hand
 
 4. Connect to database
 
+5. Insert data into database
+  a. Clean data 
+  b. Specific data
+    i. Added deals data to database
+
+N. Don't forget virtual environment items.
+   Fix primary keys for deals and distributions.
