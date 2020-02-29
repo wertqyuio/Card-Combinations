@@ -17,7 +17,8 @@ Notes:
 5. Insert data into database
   a. Clean data 
   b. Specific data
-    i. Added deals data to database
+    i. Add deals data to database
+    ii. Add distributions data to database
 
 N. Don't forget virtual environment items.
    Fix primary keys for deals and distributions.
