@@ -14,7 +14,6 @@ connection = create_connection(
     PGDATABASE, PGUSER, PGPASSWORD, PGHOST, PGPORT
 )
 
-
 # below to see each deal and result individually
 for idx, deal in enumerate(deals):
     # process each deal into 8 distributions
