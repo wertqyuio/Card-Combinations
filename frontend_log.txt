@@ -2,3 +2,5 @@
   a. Had to update create-react-app version
   b. Also had dependency issue so had to reset yarn.lock
   c. Touch .env to skip preflight check.
+
+2. Create a table displaying the 5 most common distributions in bootstrap styaled table
