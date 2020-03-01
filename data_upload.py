@@ -1,13 +1,14 @@
 from pbn_reader import date, deals, results
 from database_helper_functions import create_connection
 from database_credentials import PGDATABASE, PGUSER, PGPASSWORD, PGHOST, PGPORT
-from helper_functions import compare_hands
+from helper_functions import compare_hands, convert_results
 
 # all_hands records all the hands before saving into database
 all_hands = []
 suits = ["s", "h", "d", "c"]
 insert_deals = []
 insert_distributions = []
+results = convert_results(results)
 
 connection = create_connection(
     PGDATABASE, PGUSER, PGPASSWORD, PGHOST, PGPORT
@@ -43,13 +44,14 @@ for idx_board in range(len(deals)):
                 left_hand, right_hand = right_hand, left_hand
             insert_distributions.append((
                 date[0], date[1], date[2], idx_board+1, suits[idx_suit],
-                left_hand, right_hand,
-                results[idx_board][results_idx:results_idx+10]))
+                left_hand, right_hand, results[idx_board],
+                *results[idx_board][results_idx:results_idx+10]))
 
 distributions_records = ", ".join(["%s"] * len(insert_distributions))
 
 insert_query_distributions = (
-    f'''INSERT INTO distributions (year, month, day, board, suit, long, short, results)
+    f'''INSERT INTO distributions (year, month, day, board, suit, long, short,
+     results, N_1, N_2, S_1, S_2, H_1, H_2, D_1, D_2, C_1, C_2)
      VALUES {distributions_records}'''
 )
 

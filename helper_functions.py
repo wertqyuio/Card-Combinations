@@ -12,3 +12,10 @@ def compare_hands(left, right):
         cards = ["2", "3", "4", "5", "6", "7",
                  "8", "9", "T", "J", "Q", "K", "A"]
         return cards.index(left[0]) > cards.index(right[0])
+
+
+def convert_results(results_strings):
+    # converts list of string of results into list of list of integers
+    tricks = "0123456789abcd"
+    return [[tricks.find(strain) for strain in results] for results in
+            results_strings]

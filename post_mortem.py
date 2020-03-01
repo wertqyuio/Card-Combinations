@@ -9,7 +9,9 @@ connection = create_connection(
 
 
 def base_insights():
-    select_distributions = '''SELECT LENGTH(LONG), LENGTH(SHORT), COUNT(*) AS FREQUENCY FROM DISTRIBUTIONS
+    select_distributions = '''SELECT LENGTH(LONG), LENGTH(SHORT),
+                      LENGTH(LONG)+LENGTH(SHORT) AS FIT, COUNT(*)
+                      AS FREQUENCY FROM DISTRIBUTIONS
                       GROUP BY LENGTH(LONG), LENGTH(SHORT)
                       ORDER BY FREQUENCY DESC
                       LIMIT 5; '''
@@ -18,7 +20,8 @@ def base_insights():
 
     for distribution in distributions:
         print(
-            f"Split {distribution[0]}-{distribution[1]} appeared {distribution[2]} times.")
+            f'''{distribution[2]} card fit is split {distribution[0]}-{
+                distribution[1]} a total of {distribution[3]} times.''')
 
 
 base_insights()
