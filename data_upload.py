@@ -57,6 +57,5 @@ insert_query_distributions = (
 
 connection.autocommit = True
 cursor = connection.cursor()
-
 cursor.execute(insert_query_deals, insert_deals)
 cursor.execute(insert_query_distributions, insert_distributions)
