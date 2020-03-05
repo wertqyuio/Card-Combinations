@@ -1,3 +1,4 @@
 backend/__pycache__/
 backend/database_credentials.py
 frontend/node_modules/
+backend/database_credentials.js

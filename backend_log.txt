@@ -30,5 +30,7 @@ Notes:
 
 N. Don't forget virtual environment items.
    Fix primary keys for deals and distributions. ??? not sure if necessary
+   Fix data insertion
    Add tests
    Look into pandas
+   Get rid of integer arrays
