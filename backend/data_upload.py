@@ -50,7 +50,7 @@ distributions_records = ", ".join(["%s"] * len(insert_distributions))
 
 insert_query_distributions = (
     f'''INSERT INTO distributions (year, month, day, board, suit, long, short,
-     results, N_1, N_2, S_1, S_2, H_1, H_2, D_1, D_2, C_1, C_2)
+     results, N_1, S_1, H_1, D_1, C_1, N_2, S_2, H_2, D_2, C_2)
      VALUES {distributions_records}'''
 )
 
