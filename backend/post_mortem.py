@@ -19,9 +19,4 @@ def base_insights():
     distributions = execute_read_query(connection, select_distributions)
 
     for distribution in distributions:
-        print(
-            f'''{distribution[2]} card fit is split {distribution[0]}-{
-                distribution[1]} a total of {distribution[3]} times.''')
-
-
-base_insights()
+        return distributions
